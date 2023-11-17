@@ -44,6 +44,7 @@ dependencies:
   # tflite_flutter: ^0.10.3
   flutter_tflite: ^1.0.1
   flutter_launcher_icons: ^0.10.0
+  dio: ^5.3.3
 
 dev_dependencies:
   flutter_test:
@@ -73,6 +74,7 @@ flutter:
     - assets/community_posts/
     - assets/yoga/
     - assets/user/
+    - assets/meditation/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

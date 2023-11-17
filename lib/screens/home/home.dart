@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:yogzen_v_1/global/color.dart';
+import 'package:yogzen_v_1/screens/home/components/mediatation_card.dart';
 import 'package:yogzen_v_1/screens/user_profile/user_page.dart';
 
 import 'components/yoga_card.dart';
@@ -16,7 +17,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List yogaList = [
-    YogaCard(
+    const YogaCard(
       postYoga: "assets/yoga/yoga1.webp",
       des: 'Buddha konasana',
       url: 'https://youtu.be/YXOeBUjmERI?si=pHkw5tcXLS7XU8oH',
@@ -29,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
       // ],
       name: "Tadasan",
     ),
-    YogaCard(
+    const YogaCard(
       postYoga: "assets/yoga/yoga2.webp",
       des: 'Sirsasana',
       url: 'https://youtu.be/8NGAIZ0muIY?si=Zb0DncOUaNr9lTgZ',
@@ -43,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
       // ],
       name: "Tadasan",
     ),
-    YogaCard(
+    const YogaCard(
       postYoga: "assets/yoga/yoga3.webp",
       des: 'Upavistha Konasana',
       url: 'https://youtu.be/YtjKXDHd5hU?si=uXslaQ0ww4Y51NA7',
@@ -56,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
       // ],
       name: "Tadasan",
     ),
-    YogaCard(
+    const YogaCard(
       postYoga: "assets/yoga/yoga4.webp",
       des: 'Adho Mukha Svanasana',
       url: 'https://youtu.be/6Ep5VzGqDRU?si=exN5SjZ0mYPXwlpf',
@@ -69,7 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
       // ],
       name: "Tadasan",
     ),
-    YogaCard(
+    const YogaCard(
       postYoga: "assets/yoga/yoga5.webp",
       des: 'Tadasana',
       url: 'https://youtu.be/6TUS8UwfCO0?si=h0vUoQf-tBA-F1X2',
@@ -86,6 +87,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     final _advancedDrawerController = AdvancedDrawerController();
 
     void _handleMenuButtonPressed() {
@@ -143,7 +146,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     bottom: 64.0,
                   ),
                   clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.black26,
                     shape: BoxShape.circle,
                   ),
@@ -151,8 +154,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 ListTile(
                   onTap: () {},
-                  leading: Icon(Icons.home),
-                  title: Text('Home'),
+                  leading: const Icon(Icons.home),
+                  title: const Text('Home'),
                 ),
                 // ListTile(
                 //   onTap: () {},
@@ -161,12 +164,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 // ),
                 ListTile(
                   onTap: () {},
-                  leading: Icon(Icons.edit),
-                  title: Text('Set Preferences'),
+                  leading: const Icon(Icons.edit),
+                  title: const Text('Set Preferences'),
                 ),
                 ListTile(
                   onTap: () {},
-                  leading: Icon(ThemeMode.system == ThemeMode.dark
+                  leading: const Icon(ThemeMode.system == ThemeMode.dark
                       ? Icons.light_mode
                       : Icons.dark_mode),
                   title: Text(MediaQuery.of(context).platformBrightness ==
@@ -176,12 +179,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 ListTile(
                   onTap: () {},
-                  leading: Icon(Icons.logout),
-                  title: Text('Sign Out'),
+                  leading: const Icon(Icons.logout),
+                  title: const Text('Sign Out'),
                 ),
-                Spacer(),
+                const Spacer(),
                 DefaultTextStyle(
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 12,
                     color: Colors.white54,
                   ),
@@ -189,7 +192,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     margin: const EdgeInsets.symmetric(
                       vertical: 16.0,
                     ),
-                    child: Text('Terms of Service | Privacy Policy'),
+                    child: const Text('Terms of Service | Privacy Policy'),
                   ),
                 ),
               ],
@@ -218,217 +221,344 @@ class _HomeScreenState extends State<HomeScreen> {
         //   ),
         // ),
         backgroundColor: klightBlue,
-        body: SafeArea(
-          child: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.only(left: 16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  //Greetings
-                  Container(
-                    padding: const EdgeInsets.only(top: 10),
-                    child: Row(
-                      children: [
-                        IconButton(
-                          onPressed: () {},
-                          //     Navigator.of(context).push(MaterialPageRoute(
-                          //   builder: ((context) => const userPageScreen()),
-                          // )),
-                          icon: CircleAvatar(
-                            backgroundImage: Image.asset(
-                              "assets/profile.png",
-                              fit: BoxFit.cover,
-                            ).image,
-                            // backgroundColor: kdarkBlue,
-                            radius: 32,
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              //Greetings
+              // Container(
+              //   padding: const EdgeInsets.only(top: 10),
+              //   child: Row(
+              //     children: [
+              //       IconButton(
+              //         onPressed: () {},
+              //         //     Navigator.of(context).push(MaterialPageRoute(
+              //         //   builder: ((context) => const userPageScreen()),
+              //         // )),
+              //         icon: CircleAvatar(
+              //           backgroundImage: Image.asset(
+              //             "assets/profile.png",
+              //             fit: BoxFit.cover,
+              //           ).image,
+              //           // backgroundColor: kdarkBlue,
+              //           radius: 32,
+              //         ),
+              //       ),
+              //       const SizedBox(width: 12),
+              //       Column(
+              //         crossAxisAlignment: CrossAxisAlignment.start,
+              //         children: [
+              //           Row(
+              //             children: [
+              //               Text(
+              //                 'Hello, Yash👋',
+              //                 style: TextStyle(
+              //                   color: kblackHeading,
+              //                   fontSize: 22,
+              //                   fontWeight: FontWeight.w600,
+              //                 ),
+              //               ),
+              //             ],
+              //           ),
+              //           Text(
+              //             'Good Morning!',
+              //             style: TextStyle(
+              //               color: kblackSubHeading,
+              //               fontSize: 16,
+              //               fontWeight: FontWeight.w400,
+              //             ),
+              //           ),
+              //         ],
+              //       ),
+              //     ],
+              //   ),
+              // ),
+
+              // //daily challenge
+              // const SizedBox(height: 26),
+              // Text(
+              //   "Daily Challenge",
+              //   style: TextStyle(
+              //     color: kblackHeading,
+              //     fontSize: 18,
+              //     fontWeight: FontWeight.w600,
+              //   ),
+              // ),
+              // const SizedBox(height: 10),
+              // Container(
+              //   margin: const EdgeInsets.only(right: 16),
+              //   width: double.infinity,
+              //   padding: const EdgeInsets.all(16),
+              //   decoration: BoxDecoration(
+              //     color: Colors.white,
+              //     borderRadius: BorderRadius.circular(8),
+              //   ),
+              //   child: Column(
+              //     crossAxisAlignment: CrossAxisAlignment.start,
+              //     children: [
+              //       Text(
+              //         "Complete your streak and earn rewards!",
+              //         style: TextStyle(color: kblackSubHeading),
+              //       ),
+              //       const SizedBox(height: 20),
+              //       InkWell(
+              //         child: Container(
+              //           padding: const EdgeInsets.all(12),
+              //           decoration: BoxDecoration(
+              //             color: kdarkBlue,
+              //             borderRadius: BorderRadius.circular(100),
+              //           ),
+              //           child: const Text(
+              //             "Go to challenge",
+              //             style: TextStyle(color: Colors.white),
+              //           ),
+              //         ),
+              //       ),
+              //       const SizedBox(height: 20),
+              //       const LinearProgressIndicator(
+              //         backgroundColor: klightBlue,
+              //         value: 0.7,
+              //         color: kdarkBlue,
+              //         borderRadius: BorderRadius.all(Radius.circular(8)),
+              //       ),
+              //       const SizedBox(height: 6),
+              //       Container(
+              //         width: double.infinity,
+              //         child: Text(
+              //           "21/30 days",
+              //           textAlign: TextAlign.right,
+              //           style: TextStyle(
+              //               color: kblackSubHeading, fontSize: 12),
+              //         ),
+              //       ),
+              //     ],
+              //   ),
+              // ),
+
+              Container(
+                height: height * 0.3,
+                width: width,
+                decoration: const BoxDecoration(
+                  // image: DecorationImage(
+                  //   opacity: 0.3,
+                  //   image: Image.asset(
+                  //     "assets/mountain.jpeg",
+                  //   ).image,
+                  //   fit: BoxFit.cover,
+                  // ),
+
+                  color: kdarkBlue,
+                ),
+                child: Column(
+                  children: [
+                    const Spacer(),
+                    Container(
+                      padding: const EdgeInsets.only(top: 30, left: 12),
+                      child: const Row(
+                        children: [
+                          // IconButton(
+                          //   onPressed: () {},
+                          //   icon: CircleAvatar(
+                          //     backgroundImage: Image.asset(
+                          //       "assets/profile.png",
+                          //       fit: BoxFit.fill,
+                          //     ).image,
+                          //     // backgroundColor: kdarkBlue,
+                          //     radius: 28,
+                          //   ),
+                          // ),
+
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Good Morning, Yash',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              // Text(
+                              //   'Good Morning!',
+                              //   style: TextStyle(
+                              //     color: Colors.white,
+                              //     fontSize: 14,
+                              //     fontWeight: FontWeight.w400,
+                              //   ),
+                              // ),
+                            ],
                           ),
-                        ),
-                        const SizedBox(width: 12),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
+                        ],
+                      ),
+                    ),
+                    const Spacer(),
+                    //daily challenge
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Stack(
+                        clipBehavior: Clip.none,
+                        children: [
+                          Container(
+                            height: height * 0.12,
+                            width: width * 0.8,
+                            decoration: BoxDecoration(
+                              color: kdarkBlueMuted,
+                              borderRadius: const BorderRadius.only(
+                                topRight: Radius.circular(100),
+                                bottomRight: Radius.circular(100),
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            left: -(height * 0.12) / 3,
+                            child: CircleAvatar(
+                              backgroundColor: kdarkBlueMuted,
+                              radius: (height * 0.12) / 2,
+                              child: Image.asset(
+                                "assets/welcome.png",
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            top: (height * 0.12) / 10,
+                            left: (height * 0.12) - 10,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  'Hello, Yash👋',
+                                const Text(
+                                  "Daily Challenge",
                                   style: TextStyle(
-                                    color: kblackHeading,
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                const SizedBox(height: 6),
+                                GestureDetector(
+                                  onTap: () {},
+                                  child: Container(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 60, vertical: 8),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(100),
+                                    ),
+                                    child: const Text(
+                                      "Start",
+                                      style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
                                   ),
                                 ),
                               ],
                             ),
-                            Text(
-                              'Good Morning!',
-                              style: TextStyle(
-                                color: kblackSubHeading,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
+                          )
+                        ],
+                      ),
                     ),
-                  ),
-
-                  //daily challenge
-                  const SizedBox(height: 26),
-                  Text(
-                    "Daily Challenge",
-                    style: TextStyle(
-                      color: kblackHeading,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  Container(
-                    margin: const EdgeInsets.only(right: 16),
-                    width: double.infinity,
-                    padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Complete your streak and earn rewards!",
-                          style: TextStyle(color: kblackSubHeading),
-                        ),
-                        const SizedBox(height: 20),
-                        InkWell(
-                          child: Container(
-                            padding: const EdgeInsets.all(12),
-                            decoration: BoxDecoration(
-                              color: kdarkBlue,
-                              borderRadius: BorderRadius.circular(100),
-                            ),
-                            child: const Text(
-                              "Go to challenge",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(height: 20),
-                        const LinearProgressIndicator(
-                          backgroundColor: klightBlue,
-                          value: 0.7,
-                          color: kdarkBlue,
-                          borderRadius: BorderRadius.all(Radius.circular(8)),
-                        ),
-                        const SizedBox(height: 6),
-                        Container(
-                          width: double.infinity,
-                          child: Text(
-                            "21/30 days",
-                            textAlign: TextAlign.right,
-                            style: TextStyle(
-                                color: kblackSubHeading, fontSize: 12),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-
-                  //favrourite
-                  const SizedBox(height: 26),
-                  Text(
-                    "Favourite",
-                    style: TextStyle(
-                      color: kblackHeading,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  SizedBox(
-                    height: 160,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      shrinkWrap: true,
-                      itemCount: yogaList.length,
-                      itemBuilder: (context, index) {
-                        return yogaList[index];
-                      },
-                    ),
-                  ),
-
-                  //guided workouts
-                  const SizedBox(height: 26),
-                  Text(
-                    "Guided workouts",
-                    style: TextStyle(
-                      color: kblackHeading,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  SizedBox(
-                    height: 160,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      shrinkWrap: true,
-                      itemCount: yogaList.length,
-                      itemBuilder: (context, index) {
-                        return yogaList[index];
-                      },
-                    ),
-                  ),
-
-                  //Meditation
-                  const SizedBox(height: 26),
-                  Text(
-                    "Meditation",
-                    style: TextStyle(
-                      color: kblackHeading,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  SizedBox(
-                    height: 160,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      shrinkWrap: true,
-                      itemCount: yogaList.length,
-                      itemBuilder: (context, index) {
-                        return yogaList[index];
-                      },
-                    ),
-                  ),
-
-                  //Yoga Library
-                  const SizedBox(height: 26),
-                  Text(
-                    "Yoga Library",
-                    style: TextStyle(
-                      color: kblackHeading,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  SizedBox(
-                    height: 160,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      shrinkWrap: true,
-                      itemCount: yogaList.length,
-                      itemBuilder: (context, index) {
-                        return yogaList[index];
-                      },
-                    ),
-                  ),
-                ],
+                    const Spacer(),
+                  ],
+                ),
               ),
-            ),
+              Padding(
+                padding: const EdgeInsets.only(left: 16, top: 24, bottom: 20),
+                child: Text("Meditation",
+                    style: Theme.of(context).textTheme.headlineMedium),
+              ),
+
+              const Meditation(),
+
+              //favrourite
+              const SizedBox(height: 26),
+              Padding(
+                padding: const EdgeInsets.only(left: 16),
+                child: Text(
+                  "Favourite",
+                  style: TextStyle(
+                    color: kblackHeading,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10),
+              SizedBox(
+                height: 160,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,
+                  itemCount: yogaList.length,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: EdgeInsets.only(left: index == 0 ? 16 : 0),
+                      child: yogaList[index],
+                    );
+                  },
+                ),
+              ),
+
+              //guided workouts
+              const SizedBox(height: 26),
+              Padding(
+                padding: const EdgeInsets.only(left: 16),
+                child: Text(
+                  "Guided workouts",
+                  style: TextStyle(
+                    color: kblackHeading,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10),
+              SizedBox(
+                height: 160,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,
+                  itemCount: yogaList.length,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: EdgeInsets.only(left: index == 0 ? 16 : 0),
+                      child: yogaList[index],
+                    );
+                  },
+                ),
+              ),
+
+              //Yoga Library
+              const SizedBox(height: 26),
+              Padding(
+                padding: const EdgeInsets.only(left: 16),
+                child: Text(
+                  "Yoga Library",
+                  style: TextStyle(
+                    color: kblackHeading,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10),
+              SizedBox(
+                height: 160,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,
+                  itemCount: yogaList.length,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: EdgeInsets.only(left: index == 0 ? 16 : 0),
+                      child: yogaList[index],
+                    );
+                  },
+                ),
+              ),
+            ],
           ),
         ),
       ),

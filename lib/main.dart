@@ -7,11 +7,12 @@ import 'package:yogzen_v_1/screens/camera/camera.dart';
 
 import 'package:yogzen_v_1/screens/community/yog_guru.dart';
 import 'package:yogzen_v_1/screens/home/home.dart';
+import 'package:yogzen_v_1/screens/auth/auth_screen.dart';
 import 'package:yogzen_v_1/screens/specific_needs/specific_needs.dart';
 import 'package:yogzen_v_1/screens/welcome/welcome.dart';
 
 List<CameraDescription>? cameras;
-void main() async { 
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   cameras = await availableCameras();
@@ -52,6 +53,7 @@ class MyApp extends StatelessWidget {
         YogGuru.routeName: (context) => YogGuru(),
         Camera.routeName: (context) => Camera(),
         SpecificNeeds.routeName: (context) => SpecificNeeds(),
+        AuthScreen.routeName: (context) => AuthScreen(),
       },
       home: WelcomeScreen(),
     );

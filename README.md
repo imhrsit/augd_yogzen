@@ -22,8 +22,8 @@ Tailor your yoga and wellness journey based on your unique health needs. YogZen 
 YogZen is an open-source project, and we welcome contributions from the community. If you're passionate about yoga, technology, or both, check out our Contribution Guidelines to get started.
 
 ## Tech Stack
-Frontend : Flutter, Dart
-Backend : Go, Firebase, MongoDB
+* Frontend : Flutter, Dart
+* Backend : GoLang, MongoDB
 
 ## Installation Guide
 1. Clone the repository: git clone https://github.com/Yash-Khattar/augd_yogzen.git
